@@ -1,4 +1,4 @@
-# Idempotency Example
+# Idempotency
 
 Bu proje, .NET Core Web API'lerinde **attribute-based idempotency** implementasyonunu göstermektedir. Kritik API endpoint'lerinde duplicate işlemleri önlemek için geliştirilmiştir.
 
