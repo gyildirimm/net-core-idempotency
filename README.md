@@ -1,4 +1,4 @@
-# Idempotency Middleware Example
+# Idempotency Example
 
 Bu proje, .NET Core Web API'lerinde **attribute-based idempotency** implementasyonunu göstermektedir. Kritik API endpoint'lerinde duplicate işlemleri önlemek için geliştirilmiştir.
 
@@ -12,9 +12,6 @@ Bu proje, .NET Core Web API'lerinde **attribute-based idempotency** implementasy
 - ✅ **Konfigüre edilebilir TTL**: Farklı endpoint'ler için farklı cache süreleri
 - ✅ **Özelleştirilebilir header**: Default `Idempotency-Key` yerine istediğiniz header adını kullanabilme
 - ✅ **Memory Cache**: Ek dependency olmadan in-memory çalışma
-- ✅ **Comprehensive logging**: Debug ve monitoring için detaylı log desteği
-- ✅ **Unit & Integration testler**: Tam test coverage'ı
-
 ## 📋 Kullanım
 
 ### Temel Kullanım
@@ -85,7 +82,6 @@ ASP.NET Core:
 
 ### Gereksinimler
 - .NET 8.0+
-- Visual Studio 2022 / VS Code / JetBrains Rider
 
 ### Adımlar
 
@@ -193,16 +189,6 @@ Log mesajları:
 - TTL süreleri işlem tipine uygun ayarlanmalıdır
 - Production'da distributed cache (Redis) kullanımı önerilir
 
-## 🚀 Production Hazırlığı
-
-Production ortamında aşağıdaki geliştirmeler yapılabilir:
-
-1. **Distributed Cache**: Redis implementasyonu
-2. **Database Storage**: Persistent storage seçeneği
-3. **Rate Limiting**: Abuse protection
-4. **Metrics**: Performance monitoring
-5. **Circuit Breaker**: Resilience patterns
-
 ## 📝 Yapı
 
 ```
@@ -234,15 +220,3 @@ src/
 - Cache boyutu ve TTL değerleri sistem kapasitesine göre ayarlanmalıdır
 - Error response'ları cache'lenmez, sadece başarılı response'lar cache'lenir
 - Aynı endpoint için farklı payload'lar aynı idempotency key ile gönderilirse ilk payload işlenir
-
-## 🤝 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
